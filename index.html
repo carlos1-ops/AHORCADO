@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Juegos Web</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Selecciona un juego</h1>
+  <div id="menu">
+    <button onclick="mostrarJuego('ahorcado')">Ahorcado</button>
+    <button onclick="mostrarJuego('gato')">Gato</button>
+  </div>
+
+  <!-- Ahorcado -->
+  <div id="ahorcado" class="juego" style="display:none;">
+
+    <!-- Imagen del ahorcado -->
+    <div id="imagen-ahorcado">
+      <img id="imagen" src="images/ahorcado0.png" alt="Ahorcado" width="200">
+    </div>
+
+    <!-- Formulario para ingresar la palabra -->
+    <div id="form-palabra-secreta">
+      <h2>Ingresar palabra secreta</h2>
+      <input type="password" id="palabra-input" maxlength="20">
+      <button onclick="establecerPalabra()">Empezar juego</button>
+    </div>
+
+    <!-- Interfaz del juego del ahorcado -->
+    <div id="juego-ahorcado" style="display:none;">
+      <h2>Juego del Ahorcado</h2>
+      <p id="palabra-secreta"></p>
+      <p>Errores: <span id="errores">0</span></p>
+      <p>Letras usadas: <span id="letras-usadas"></span></p>
+      <input type="text" id="input-letra" maxlength="1">
+      <button onclick="adivinarLetra()">Adivinar</button>
+      <p id="mensaje"></p>
+      <button onclick="volverAlMenu()">Volver al menú</button>
+    </div>
+  </div>
+
+  <!-- Gato (Tic Tac Toe) -->
+  <div id="gato" class="juego" style="display:none;">
+    <h2>Juego del Gato (Tic Tac Toe)</h2>
+    <div id="tablero-gato"></div>
+    <p id="ganador"></p>
+    <button onclick="reiniciarGato()">Reiniciar</button>
+    <button onclick="volverAlMenu()">Volver al menú</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
